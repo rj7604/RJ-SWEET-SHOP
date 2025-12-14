@@ -1,0 +1,423 @@
+/* =========================
+   GLOBAL RESET & BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f4f6fb;
+  color: #1f2937;
+  line-height: 1.5;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input,
+select {
+  font-family: inherit;
+  outline: none;
+}
+
+/* =========================
+   AUTH PAGE
+========================= */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff5a5f, #ff7b7f);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 380px;
+  background: white;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
+  text-align: center;
+}
+
+.auth-card h1 {
+  margin-bottom: 8px;
+  font-size: 28px;
+}
+
+.auth-card .subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.auth-card input,
+.auth-card select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+.auth-card button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: #ff5a5f;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.auth-card button:disabled {
+  opacity: 0.7;
+}
+
+.auth-card .switch {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.auth-card .switch span {
+  color: #ff5a5f;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-card .error {
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  font-size: 13px;
+}
+
+/* =========================
+   DASHBOARD HEADER
+========================= */
+.dashboard-header {
+  background: white;
+  padding: 16px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.dashboard-header h1 {
+  font-size: 22px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-actions .role {
+  background: #eef2ff;
+  color: #3730a3;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.header-actions button {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: none;
+  background: #ff5a5f;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.header-actions .logout {
+  background: #111827;
+}
+
+/* =========================
+   DASHBOARD CONTENT
+========================= */
+.dashboard-content {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+.dashboard-content h2 {
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+/* =========================
+   DASHBOARD STATS
+========================= */
+.dashboard-stats {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.dashboard-stats span {
+  background: #eef2ff;
+  padding: 8px 14px;
+  border-radius: 12px;
+}
+
+/* =========================
+   FILTER BAR (FIXED)
+========================= */
+.filter-bar {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr auto;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.filter-bar .search {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+.filter-bar select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  background: white;
+  font-size: 14px;
+}
+
+.stock-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #374151;
+  white-space: nowrap;
+}
+
+.stock-filter input {
+  accent-color: #ff5a5f;
+  width: 16px;
+  height: 16px;
+}
+
+/* =========================
+   SWEET GRID
+========================= */
+.sweet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.sweet-card {
+  background: white;
+  padding: 22px;
+  border-radius: 20px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sweet-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.12);
+}
+
+.sweet-card h3 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.sweet-card .category {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.sweet-card .price {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.sweet-card .stock {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.stock.in {
+  color: #15803d;
+}
+
+.stock.out {
+  color: #b91c1c;
+}
+
+.sweet-card button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  background: #ff5a5f;
+  color: white;
+  font-weight: 600;
+}
+
+.sweet-card button:disabled {
+  background: #d1d5db;
+  color: #6b7280;
+}
+
+/* =========================
+   ADMIN PAGE
+========================= */
+.admin-page {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.admin-header h1 {
+  font-size: 24px;
+}
+
+.admin-header button {
+  background: #111827;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+}
+
+/* =========================
+   ADMIN CARD (ADD SWEET)
+========================= */
+.admin-card {
+  background: white;
+  padding: 28px;
+  border-radius: 22px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+  margin-bottom: 40px;
+}
+
+.admin-card h2 {
+  margin-bottom: 20px;
+}
+
+.admin-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.admin-form input {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+}
+
+.primary-btn {
+  background: #ff5a5f;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 14px;
+  border: none;
+  font-weight: 600;
+}
+
+/* =========================
+   INVENTORY LIST
+========================= */
+.admin-section h2 {
+  margin-bottom: 16px;
+}
+
+.inventory-item {
+  background: white;
+  padding: 18px 22px;
+  border-radius: 18px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.07);
+  margin-bottom: 14px;
+}
+
+.inventory-item .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.inventory-item .muted {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.inventory-item .price {
+  font-weight: 700;
+}
+
+.inventory-item .actions {
+  display: flex;
+  gap: 10px;
+}
+
+.inventory-item .actions button {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+}
+
+.inventory-item .actions .danger {
+  background: #dc2626;
+  color: white;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .dashboard-stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .filter-bar {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,134 @@
+/* GLOBAL */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: #f6f7fb;
+  color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #ff5a5f, #ff7b7f);
+  color: white;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.logout {
+  background: white;
+  color: #ff5a5f;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* ADD FORM */
+.admin-form {
+  background: white;
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.1);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.primary-btn {
+  margin-top: 14px;
+  padding: 12px 20px;
+  background: #ff5a5f;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* INVENTORY */
+.section-title {
+  margin: 40px 0 14px;
+}
+
+.admin-row {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 1fr 2fr;
+  align-items: center;
+  background: white;
+  padding: 16px 22px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.admin-row.header {
+  background: transparent;
+  box-shadow: none;
+  font-weight: bold;
+  color: #666;
+}
+
+.muted {
+  font-size: 13px;
+  color: #777;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.stock {
+  padding: 6px 12px;
+  border-radius: 14px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.stock.in {
+  background: #d4edda;
+  color: #155724;
+}
+
+.stock.out {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* ACTIONS */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.actions button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.actions .danger {
+  background: #dc3545;
+  color: white;
+}
